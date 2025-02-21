@@ -39,14 +39,25 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        #volumeControl {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+    <audio id="bgMusic" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <img src="fumo teto.png" alt="Click Me" onclick="increaseCounter()">
     <p id="counter">Clicks: 0</p>
     <div class="button-container">
         <button id="upgradeClick" onclick="buyUpgrade()">Upgrade Click (Cost: 10)</button>
         <button id="autoClicker" onclick="buyAutoClicker()">Auto Clicker (Cost: 50)</button>
+    </div>
+    <div id="volumeControl">
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5" onchange="adjustVolume()">
     </div>
     <script>
         let count = 0;
@@ -54,6 +65,14 @@
         let upgradeCost = 10;
         let autoClickerCost = 50;
         let autoClickers = 0;
+
+        const bgMusic = document.getElementById("bgMusic");
+        bgMusic.volume = 0.5;
+        bgMusic.play();
+
+        function adjustVolume() {
+            bgMusic.volume = document.getElementById("volume").value;
+        }
 
         function increaseCounter() {
             count += clickValue;
