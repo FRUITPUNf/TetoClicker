@@ -1,0 +1,56 @@
+html, body {
+    height: 100%; /* Ensure body and html fill the full viewport height */
+    margin: 0;
+    padding: 0; 
+    overflow: hidden; /* Prevent any overflow outside the body */
+}
+
+body {
+    background-color: #000000; /* Black background */
+    color: white;
+    font-family: sans-serif;
+}
+
+div {
+    display: flex;
+    flex-direction: row; /* Keep the sections in a row */
+    justify-content: space-between; /* Space out the divs horizontally */
+    gap: 8px;
+    padding: 0; /* Remove padding to prevent space around the edges */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.left, .middle, .right {
+    border: 2px solid white;
+    padding: 20px;
+    background-color: teal; /* Temporary background for testing */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Ensure each div takes up full height */
+    width: 100%; /* Ensure each div takes up full width */
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+}
+
+.left {
+    width: 25%; /* Or your desired width */
+}
+
+.middle {
+    width: 55%; /* Or your desired width */
+}
+
+.right {
+    width: 20%; /* Or your desired width */
+}
+
+#counter {
+    position: relative;
+    font-size: 28px;
+    text-align: center;
+    background-color: #00000073;
+    width: fit-content; /* Make sure it takes up the full width of its parent */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
